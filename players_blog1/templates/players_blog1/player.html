@@ -1,0 +1,174 @@
+{% load static %}  <!-- Don't forget to load static at the top of your template -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBA Players Blog - Player Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom CSS for background and container */
+        body {
+            background-color: #a7c7e7; /* Pastel blue background */
+        }
+
+        .container {
+            background-color: white; /* White background for the container */
+            padding: 20px; /* Padding for the container */
+            border-radius: 8px; /* Rounded corners for the container */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        }
+
+        /* Custom CSS for card height and styling */
+        .card {
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: scale(1.05); /* Zoom effect on hover */
+        }
+
+        .card-img-top {
+            height: 200px; /* Set a fixed height for images */
+            object-fit: cover; /* Cover the space without distortion */
+        }
+
+        .related-players {
+            margin-top: 30px;
+        }
+
+        /* Custom CSS for the blue table matching the homepage style */
+        .blue-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .blue-table th, .blue-table td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #007BFF; /* Blue border for the table */
+        }
+
+        .blue-table th {
+            background-color: #007BFF; /* Header background color */
+            color: white; /* White text for header */
+        }
+
+        .blue-table td {
+            background-color: #e7f3ff; /* Light blue for table cells */
+            color: #333; /* Dark text for better readability */
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="text-center mb-4">Player Spotlight: LeBron James</h1>
+
+        <!-- Player Profile Section -->
+        <section class="mb-5">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="{% static 'images/lebrone1.webp' %}" class="img-fluid" alt="LeBron James">
+                </div>
+                <div class="col-md-8">
+                    <h2>LeBron James</h2>
+                    <p>Position: Small Forward / Power Forward</p>
+                    <p>Team: Los Angeles Lakers</p>
+                    <p>LeBron James, often considered one of the greatest basketball players of all time, has achieved numerous accolades throughout his career. With four NBA championships and two Olympic gold medals, LeBron's ability to impact both ends of the court is unparalleled.</p>
+                    <p>LeBron continues to perform at an elite level, even in his 20th NBA season, constantly breaking records and setting new benchmarks in the league.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Player Stats Section -->
+        <section class="mb-5">
+            <h3>Career Stats</h3>
+            <table class="table blue-table">
+                <thead>
+                    <tr>
+                        <th>Season</th>
+                        <th>Team</th>
+                        <th>Points per Game (PPG)</th>
+                        <th>Assists per Game (APG)</th>
+                        <th>Rebounds per Game (RPG)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2023-2024</td>
+                        <td>Los Angeles Lakers</td>
+                        <td>27.5</td>
+                        <td>7.8</td>
+                        <td>7.2</td>
+                    </tr>
+                    <tr>
+                        <td>2022-2023</td>
+                        <td>Los Angeles Lakers</td>
+                        <td>29.3</td>
+                        <td>8.0</td>
+                        <td>7.6</td>
+                    </tr>
+                    <tr>
+                        <td>2021-2022</td>
+                        <td>Los Angeles Lakers</td>
+                        <td>30.2</td>
+                        <td>6.7</td>
+                        <td>7.4</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Related Players Section -->
+        <section class="related-players">
+            <h3>Related Players</h3>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <img src="{% static 'images/kevin2.jpg' %}" class="card-img-top" alt="Kevin Durant">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Kevin Durant</h5>
+                            <p class="card-text">One of the greatest scorers in NBA history.</p>
+                            <div class="mt-auto">
+                                <a href="{% url 'blog1-player' %}" class="btn btn-primary">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <img src="{% static 'images/stephen.jpg' %}" class="card-img-top" alt="Stephen Curry">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Stephen Curry</h5>
+                            <p class="card-text">The greatest shooter in NBA history.</p>
+                            <div class="mt-auto">
+                                <a href="{% url 'blog1-player' %}" class="btn btn-primary">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <img src="{% static 'images/giannis.jpeg' %}" class="card-img-top" alt="Giannis Antetokounmpo">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Giannis Antetokounmpo</h5>
+                            <p class="card-text">Dominating both ends of the court with his unmatched athleticism.</p>
+                            <div class="mt-auto">
+                                <a href="{% url 'blog1-player' %}" class="btn btn-primary">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation Links to Other Blog Pages -->
+        <div class="mt-5">
+            <a href="{% url 'blog1-home' %}" class="btn btn-secondary">Back to Home</a>
+            <a href="{% url 'blog1-team' %}" class="btn btn-primary">Go to Team Page</a>
+            <a href="/blog2/" class="btn btn-secondary">Go to NBA Blog 2</a>
+        </div>
+    </div>
+</body>
+</html>

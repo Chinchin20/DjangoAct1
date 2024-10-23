@@ -1,0 +1,190 @@
+{% load static %} 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBA Players Blog 2 - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #d9eaf2; /* Pastel blue background for the whole page */
+        }
+        .container {
+            background-color: #ffffff; /* White container for the content */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .section-table {
+            margin-bottom: 30px;
+        }
+        .section-table .table-container {
+            padding: 15px;
+            border-radius: 10px;
+            background-color: #f1f7fc; /* Light blue background inside tables */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .table-container h2 {
+            margin-bottom: 15px;
+        }
+        table {
+            background-color: white;
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th {
+            background-color: #b0d4f1; /* Soft blue header background */
+            color: #333;
+            padding: 10px;
+        }
+        td {
+            padding: 10px;
+            border: 1px solid #b0d4f1; /* Blue border for the cells */
+        }
+        table tr:nth-child(even) {
+            background-color: #e7f3fb; /* Alternating row color with light blue */
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="text-center mb-4">Welcome to NBA Players Blog 2</h1>
+
+        <!-- Featured Players Section -->
+        <section class="mb-5">
+            <h2>Featured Players</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="{% static 'images/stephcurry.jpg' %}" class="card-img-top" alt="Stephen Curry">
+                        <div class="card-body">
+                            <h5 class="card-title">Stephen Curry</h5>
+                            <p class="card-text">Stephen Curry continues to revolutionize the game with his exceptional shooting skills.</p>
+                            <a href="{% url 'blog2-player' %}" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="{% static 'images/luka.jpg' %}" class="card-img-top" alt="Luka Dončić">
+                        <div class="card-body">
+                            <h5 class="card-title">Luka Dončić</h5>
+                            <p class="card-text">Luka Dončić is making waves in the NBA with his incredible court vision and versatility.</p>
+                            <a href="{% url 'blog2-player' %}" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="{% static 'images/Nikola.jpeg' %}" class="card-img-top" alt="Nikola Jokić">
+                        <div class="card-body">
+                            <h5 class="card-title">Nikola Jokić</h5>
+                            <p class="card-text">Nikola Jokić dazzles fans with his unique skill set and playmaking ability as a center player.</p>
+                            <a href="{% url 'blog2-player' %}" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Top Teams Section -->
+        <section class="section-table">
+            <div class="table-container">
+                <h2>Top Teams</h2>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Team</th>
+                            <th>Rank</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Phoenix Suns</td>
+                            <td>3rd in the West</td>
+                        </tr>
+                        <tr>
+                            <td>Dallas Mavericks</td>
+                            <td>2nd in the West</td>
+                        </tr>
+                        <tr>
+                            <td>Denver Nuggets</td>
+                            <td>1st in the West</td>
+                        </tr>
+                        <tr>
+                            <td>Miami Heat</td>
+                            <td>4th in the East</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Latest News Section -->
+        <section class="section-table">
+            <div class="table-container">
+                <h2>Latest News</h2>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Player</th>
+                            <th>News</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Stephen Curry</td>
+                            <td>Leads Warriors to a playoff berth.</td>
+                        </tr>
+                        <tr>
+                            <td>Luka Dončić</td>
+                            <td>Named All-Star for the second consecutive year.</td>
+                        </tr>
+                        <tr>
+                            <td>Nikola Jokić</td>
+                            <td>Secures MVP award for the second straight season.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Upcoming Games Section -->
+        <section class="section-table">
+            <div class="table-container">
+                <h2>Upcoming Games</h2>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Match</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>November 1, 2024</td>
+                            <td>Phoenix Suns vs. Dallas Mavericks</td>
+                        </tr>
+                        <tr>
+                            <td>November 3, 2024</td>
+                            <td>Denver Nuggets vs. Miami Heat</td>
+                        </tr>
+                        <tr>
+                            <td>November 5, 2024</td>
+                            <td>Los Angeles Clippers vs. Golden State Warriors</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Navigation Links to Other Blog Pages -->
+        <div class="mt-5">
+            <a href="{% url 'blog2-player' %}" class="btn btn-primary">Go to Player Page</a>
+            <a href="{% url 'blog2-team' %}" class="btn btn-primary">Go to Team Page</a>
+            <a href="/blog1/" class="btn btn-secondary">Go to NBA Blog 1</a>
+        </div>
+    </div>
+</body>
+</html>

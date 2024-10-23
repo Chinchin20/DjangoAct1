@@ -1,0 +1,215 @@
+{% load static %} 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBA Players Blog - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom CSS */
+        body {
+            background-color: #a7c7e7;
+            font-family: Arial, sans-serif;
+        }
+
+        h1, h2 {
+            color: #003366;
+        }
+
+        .card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column; /* Align children vertically */
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-img-top {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            flex: 1; /* Allow body to grow and fill the available space */
+        }
+
+        .list-group-item {
+            border: none;
+            background-color: #f0f8ff; /* Light blue background */
+        }
+
+        .list-group-item:hover {
+            background-color: #d1e7ff; /* Slightly darker on hover */
+        }
+
+        .table {
+            background-color: #fefefe;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .table th {
+            background-color: #e7f1ff;
+            color: #003366;
+        }
+
+        .table td {
+            color: #333;
+        }
+
+        .btn-primary, .btn-secondary {
+            margin: 5px;
+            padding: 10px 20px;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            border-bottom: 2px solid #003366;
+            padding-bottom: 5px;
+        }
+
+        .text-muted {
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="text-center mb-4">Welcome to NBA Players Blog</h1>
+
+        <!-- Featured Players Section -->
+        <section class="mb-5">
+            <h2>Featured Players</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="{% static 'images/lebrone1.webp' %}" class="card-img-top" alt="LeBron James">
+                        <div class="card-body">
+                            <h5 class="card-title">LeBron James</h5>
+                            <p class="card-text">LeBron James continues to dominate in his 20th NBA season, showing no signs of slowing down.</p>
+                            <a href="{% url 'blog1-player' %}" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="{% static 'images/kevin1.jpg' %}" class="card-img-top" alt="Kevin Durant">
+                        <div class="card-body">
+                            <h5 class="card-title">Kevin Durant</h5>
+                            <p class="card-text">Kevin Durant, one of the best scorers in the league, is leading his team to new heights.</p>
+                            <a href="{% url 'blog1-player' %}" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="{% static 'images/giannis.jpeg' %}" class="card-img-top" alt="Giannis Antetokounmpo">
+                        <div class="card-body">
+                            <h5 class="card-title">Giannis Antetokounmpo</h5>
+                            <p class="card-text">The "Greek Freak" continues to amaze with his athleticism and determination on the court.</p>
+                            <a href="{% url 'blog1-player' %}" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Top Teams Section -->
+        <section class="mb-5">
+            <h2>Top Teams</h2>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Team Name</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Los Angeles Lakers</td>
+                        <td>A historic team with a rich legacy.</td>
+                    </tr>
+                    <tr>
+                        <td>Brooklyn Nets</td>
+                        <td>A rising force in the Eastern Conference.</td>
+                    </tr>
+                    <tr>
+                        <td>Milwaukee Bucks</td>
+                        <td>Current champions aiming for back-to-back titles.</td>
+                    </tr>
+                    <tr>
+                        <td>Golden State Warriors</td>
+                        <td>Known for their fast-paced style of play.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Latest News Section -->
+        <section class="mb-5">
+            <h2>Latest News</h2>
+            <div class="list-group">
+                <div class="list-group-item">
+                    <h5>LeBron James becomes the NBA's all-time leading scorer.</h5>
+                    <p class="mb-0 text-muted">Date: October 15, 2024</p>
+                </div>
+                <div class="list-group-item">
+                    <h5>Kevin Durant reaches 30,000 career points.</h5>
+                    <p class="mb-0 text-muted">Date: October 17, 2024</p>
+                </div>
+                <div class="list-group-item">
+                    <h5>Milwaukee Bucks make a strong push for the top seed in the Eastern Conference.</h5>
+                    <p class="mb-0 text-muted">Date: October 19, 2024</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Upcoming Games Section -->
+        <section>
+            <h2>Upcoming Games</h2>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Teams</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>October 25, 2024</td>
+                        <td>Los Angeles Lakers vs. Golden State Warriors</td>
+                    </tr>
+                    <tr>
+                        <td>October 27, 2024</td>
+                        <td>Brooklyn Nets vs. Milwaukee Bucks</td>
+                    </tr>
+                    <tr>
+                        <td>October 30, 2024</td>
+                        <td>Miami Heat vs. Boston Celtics</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Navigation Links to Other Blog Pages -->
+        <div class="mt-5">
+            <a href="{% url 'blog1-player' %}" class="btn btn-primary">Go to Player Page</a>
+            <a href="{% url 'blog1-team' %}" class="btn btn-primary">Go to Team Page</a>
+            <a href="/blog2/" class="btn btn-secondary">Go to NBA Blog 2</a>
+        </div>
+    </div>
+</body>
+</html>

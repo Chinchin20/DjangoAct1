@@ -1,0 +1,139 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBA Players Blog - Teams</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #a7c7e7; /* Pastel blue background for the body */
+        }
+
+        .content-container {
+            background-color: white; /* White background for the main content */
+            padding: 20px; /* Padding for better spacing */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        }
+        
+        /* Custom styles for the team details section */
+        .view-details {
+            background-color: #f0f8ff; /* Light blue background for contrast */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .view-details h3 {
+            color: #007bff; /* Blue color for headings */
+        }
+        
+        .card {
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: scale(1.05); /* Slightly enlarge card on hover */
+        }
+
+        .btn-primary {
+            background-color: #007bff; /* Customize button color */
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4 content-container"> <!-- Apply the new class here -->
+        <h1 class="text-center mb-4">NBA Teams Overview</h1>
+
+        <!-- Featured Teams Section -->
+        <section class="mb-5">
+            <h2>Featured Teams</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="{% static 'images/LosAngeles.jpg' %}" class="card-img-top" alt="Los Angeles Lakers">
+                        <div class="card-body">
+                            <h5 class="card-title">Los Angeles Lakers</h5>
+                            <p class="card-text">The Lakers are one of the most successful and popular teams in NBA history, with 17 championships.</p>
+                            <a href="#team-lakers" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="{% static 'images/Brooklyn.jpg' %}" class="card-img-top" alt="Brooklyn Nets">
+                        <div class="card-body">
+                            <h5 class="card-title">Brooklyn Nets</h5>
+                            <p class="card-text">The Nets are a rising force in the Eastern Conference, led by superstars Kevin Durant and Kyrie Irving.</p>
+                            <a href="#team-nets" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="{% static 'images/Milwaukee1.webp' %}" class="card-img-top" alt="Milwaukee Bucks">
+                        <div class="card-body">
+                            <h5 class="card-title">Milwaukee Bucks</h5>
+                            <p class="card-text">With Giannis Antetokounmpo leading the way, the Bucks won the 2021 NBA Championship and continue to contend.</p>
+                            <a href="#team-bucks" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Details Section -->
+        <section class="mb-5">
+            <h2>Team Details</h2>
+
+            <!-- Los Angeles Lakers -->
+            <div id="team-lakers" class="view-details">
+                <h3>Los Angeles Lakers</h3>
+                <p>The Los Angeles Lakers are a professional basketball team based in Los Angeles. With 17 championships, they are tied with the Boston Celtics for the most in NBA history.</p>
+                <ul class="list-group">
+                    <li class="list-group-item">Key Players: LeBron James, Anthony Davis</li>
+                    <li class="list-group-item">Championships: 17</li>
+                    <li class="list-group-item">Head Coach: Darvin Ham</li>
+                </ul>
+            </div>
+
+            <!-- Brooklyn Nets -->
+            <div id="team-nets" class="view-details">
+                <h3>Brooklyn Nets</h3>
+                <p>The Brooklyn Nets, based in New York City, have emerged as one of the top teams in the NBA, with superstar players and a dynamic offense.</p>
+                <ul class="list-group">
+                    <li class="list-group-item">Key Players: Kevin Durant, Kyrie Irving</li>
+                    <li class="list-group-item">Championships: 0</li>
+                    <li class="list-group-item">Head Coach: Jacque Vaughn</li>
+                </ul>
+            </div>
+
+            <!-- Milwaukee Bucks -->
+            <div id="team-bucks" class="view-details">
+                <h3>Milwaukee Bucks</h3>
+                <p>The Milwaukee Bucks are based in Milwaukee, Wisconsin, and are known for their dominant play led by two-time MVP Giannis Antetokounmpo.</p>
+                <ul class="list-group">
+                    <li class="list-group-item">Key Players: Giannis Antetokounmpo, Khris Middleton</li>
+                    <li class="list-group-item">Championships: 2</li>
+                    <li class="list-group-item">Head Coach: Adrian Griffin</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Navigation Links to Other Blog Pages -->
+        <div class="mt-5">
+            <a href="{% url 'blog1-home' %}" class="btn btn-secondary">Back to Home</a>
+            <a href="{% url 'blog1-player' %}" class="btn btn-primary">Go to Player Page</a>
+            <a href="/blog2/" class="btn btn-secondary">Go to NBA Blog 2</a>
+        </div>
+    </div>
+</body>
+</html>
